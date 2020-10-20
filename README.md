@@ -1,6 +1,6 @@
 # Brainflux_InfluxDB_Test
 
-*an influxdb instance must be running on port 8086 prior to loading or displaying the query result
+* an influxdb instance must be running on port 8086 prior to loading or displaying the query result
 * The first page is mapped to localhost:8080/page_one
 ** This contains a single button labeled 'load' which, when pressed, parses the csv contents and loads them into an active local influxdb server
 * The second page is mapped to localhost:8080/page_two
