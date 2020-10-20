@@ -15,8 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.influxdb.InfluxDB;
 import org.influxdb.dto.Point;
-import org.influxdb.dto.Query;
-import org.influxdb.dto.QueryResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -102,7 +100,6 @@ public class PageOneController {
 	@RequestMapping("load")
 	public String loadData() {
 
-		String databaseName="AirQuality";
 		
 		
 		

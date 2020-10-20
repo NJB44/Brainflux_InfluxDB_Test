@@ -68,17 +68,19 @@ public class PageTwoController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("page_two");
 		
-		String QueryText ="SELECT MEAN(CO), MEAN(NO2) "
+		
+		String QueryText ="SELECT MEAN(CO) AS Mean_CO, MEAN(NO2) AS Mean_NO2 "
 				+ "FROM AirQualPoint "
-				+ "WHERE time >= '2014-01-01T00:00:00Z' AND time < '2015-01-01T00:00:00Z'"
-				+ "GROUP BY time(1d)";
+				+ " WHERE time >= '2004-01-01T00:00:00Z'  AND time < '2005-01-01T00:00:00Z'"
+				+ " GROUP BY time(1d)";
 		Query InputQuery = new Query(QueryText);
 		QueryResult queryResult = influxDB.query(InputQuery);
 		
 		String tableResults =QueryResultToTable(queryResult);		
+		System.out.println(queryResult);
 		
 		mv.addObject("queryResult", tableResults);
-		mv.addObject("InputQuery", QueryText);
+		mv.addObject("QueryText", QueryText);
 	
 				
 		
